@@ -1,0 +1,19 @@
+Coded in Java. 
+MySQL is used as local database for data storage.
+Algorithm and deal related defination is in pdfs.
+
+The raw data gets from website using web crawler software and stored in excel files.
+The main packages used are those packages interacting with excel and SQL, e.g. poi, ooxml, ojdbc, mysql-connector
+
+First, raw data get read from excel and then storaged into SQL database.
+  Only several related columns are read into SQL.
+  Missing values will be read as default values.
+  This part is done in excel_to_sql.class
+  
+Second, rows with meanless credit rating will be cleaned, like "*", "W/R", "N/A" (comparing to normal rating, Aaa, Ba, Ca...)
+  This part is done in sql_clean.class
+  
+Third, cleaned data was read into Java and related statistics will be used to computing the predicted credit rating.
+  This part is done in compute.class, and Notch.class is self-defined dataframe which is used in compute.class.
+  The algorithm is defined in Data_Science_CLO_Spread_Mapping_Algorithm.pdf.
+  Java read values for all variables in the algorithm and used them to compute a credit rating.
